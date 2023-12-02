@@ -28,13 +28,13 @@ public class Drag : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
+    void OnMouseDown() //when mouse is being pressed
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) //if it's a left click
         {
-            Vector2 mousePos;
-            mousePos = Input.mousePosition;
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+            Vector2 mousePos;// create a vector 2 called mousePos
+            mousePos = Input.mousePosition;// change value of mousePos
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);// change value of mousePos
 
             isBeingHeld = true;
         }
@@ -42,7 +42,7 @@ public class Drag : MonoBehaviour
 
     void OnMouseUp()
     {
-        isBeingHeld = false;
+        isBeingHeld = false; 
     }
 
     //function for collision
@@ -50,7 +50,7 @@ public class Drag : MonoBehaviour
     {
         if (other.tag == "Goal") // if player hits goal
         {
-            SceneManager.LoadScene("EndScene"); // restart game
+            SceneManager.LoadScene("EndScene"); // goes to end screen
         }
     }
 }
