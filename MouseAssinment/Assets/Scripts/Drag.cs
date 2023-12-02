@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Drag : MonoBehaviour
 {
@@ -42,5 +43,14 @@ public class Drag : MonoBehaviour
     void OnMouseUp()
     {
         isBeingHeld = false;
+    }
+
+    //function for collision
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Goal") // if player hits goal
+        {
+            SceneManager.LoadScene("EndScene"); // restart game
+        }
     }
 }
